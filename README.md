@@ -40,3 +40,27 @@
 ## Future Improvements
 
 - `GetMapping` yang digunakan untuk POST dan DELETE. Padahal ada `PostMapping` dan `DeleteMapping` yang terdapat di Spring Boot.
+
+# Reflection 2
+
+## OO Principles & Software Maintainability
+
+### 1. Single Responsibility Principle
+
+- `CarController` meng-extend `ProductController`. Hal ini melanggar SRP di mana setiap controller seharusnya mengurus tugasnya masing-masing.
+
+### 2. Open-Closed Principle
+
+- Segala class yang ada di sini terbuka untuk extension, namun tertutup untuk modifikasi. Hal ini dapat dilihat dari berbagai implementasi interface yang berbeda.
+
+### 3. Liskov Substitution Principle
+
+- `CarController` yang meng-extend `ProductController`. Dua controller ini adalah hal yang berbeda fungsinya. Dalam Liskov Substitution, peran subclass harus bisa menggantikan superclass yang di-extend.
+
+### 4. Interface Segregation Principle
+
+- Interface yang digunakan berbeda untuk tiap hal berbeda. Contohnya `CarService` dan `ProductService` yang dibedakan dan bukan meng-implement hanya satu interface.
+
+### 5. Dependency Inversion Principle
+
+- High-level module seperti controller bergantung pada interface dan bukan sebuah class concrete. Contohnya pada controller.
